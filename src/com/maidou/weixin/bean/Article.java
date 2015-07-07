@@ -15,6 +15,7 @@ public class Article {
     // 点击图文消息跳转链接  
     private String Url;  
   
+   
     public String getTitle() {  
         return Title;  
     }  
