@@ -111,6 +111,9 @@ public class WeiXinServlet extends HttpServlet {
 				else if(content.startsWith("搜歌")){
 					message = ToolsUtil.searchMusic(fromUserName, toUserName,content);
 				}
+				else if(content.startsWith("token")){
+					message = WeiXinUtil.getAccessToken().getToken();
+				}
 				//显示提示菜单
 				else if("?".equals(content) || "？".equals(content)){
 					message = MessageUtil.initText(toUserName, fromUserName, MessageUtil.menuText());

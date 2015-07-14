@@ -17,9 +17,12 @@ import ytx.org.apache.http.util.EntityUtils;
 import net.sf.json.JSONObject;
 
 public class WeiXinUtil {
+	//测试号信息
+	private static final String  AppID = "wx3ad22fe4ea084e56";
+	private static final String AppSecret = "11a5459afaa86211b80960a07bc6ef5d";
 	
-	private static final String  AppID = "wxa84f56a503d0ddfc";
-	private static final String AppSecret = "d137b34ac09baf1066862b91e8f94390 ";
+	//private static final String  AppID = "wxa84f56a503d0ddfc";
+	//private static final String AppSecret = "d137b34ac09baf1066862b91e8f94390";
 	private static final String Access_Token_URL = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=APPID&secret=APPSECRET";
 	private static final String OpenID_URL = "https://api.weixin.qq.com/cgi-bin/user/info?access_token=ACCESS_TOKEN&openid=OPENID&lang=zh_CN";
 	
@@ -84,6 +87,7 @@ public class WeiXinUtil {
 	public static AccessToken getAccessToken() {
 		AccessToken accessToken = new AccessToken();
 		String url = Access_Token_URL.replace("APPID",AppID).replace("APPSECRET",AppSecret);
+		System.out.print(url+"\n");
 		JSONObject jo = doGetStr(url);
 		if(jo != null){
 			accessToken.setToken(jo.getString("access_token"));
@@ -103,7 +107,9 @@ public class WeiXinUtil {
 	public static UserInfo getUserInfo(String access_token,String openId) {
 		
 		UserInfo userInfo = new UserInfo();
+		System.out.print(OpenID_URL);
 		String url = OpenID_URL.replace("ACCESS_TOKEN", access_token).replace("OPENID",openId);
+		System.out.print(url);
 		JSONObject jo = doGetStr(url);
 		if(jo != null){
 			//userInfo.setSubscribe(jo.getString("subscribe"));
