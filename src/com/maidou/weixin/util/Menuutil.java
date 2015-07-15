@@ -7,7 +7,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class Menuutil {
+public class MenuUtil {
     /**
      * 创建Menu
     * @Title: createMenu

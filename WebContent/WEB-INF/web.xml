@@ -16,7 +16,23 @@
 	<url-pattern>/weiXinCore</url-pattern>
 	</servlet-mapping>
 	
-	
+	<servlet>
+		<servlet-name>initServlet</servlet-name>
+		<servlet-class>
+			org.liufeng.weixin.servlet.InitServlet
+		</servlet-class>
+		<!-- 配置获取access_token所需参数appid和appsecret -->
+		<init-param>
+			<param-name>appid</param-name>
+			<param-value>wx3ad22fe4ea084e56</param-value>
+		</init-param>
+		<init-param>
+			<param-name>appsecret</param-name>
+			<param-value>11a5459afaa86211b80960a07bc6ef5d</param-value>
+		</init-param>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+		
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
